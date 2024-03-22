@@ -1,0 +1,105 @@
+/* styles.css */
+body{
+    background: rgb(149,64,76);
+background: linear-gradient(90deg, rgba(149,64,76,1) 0%, rgba(186,68,113,1) 34%, rgba(157,83,148,1) 100%);
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.inner-container {
+    text-align: center;
+    background-color: rgb(245, 168, 223);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(151, 5, 61);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(151, 5, 61);
+    color: #fff;
+    cursor: pointer;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+}
+
+.detail img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.detail p {
+    font-size: 18px;
+    margin: 0;
+}
+
+#icon-img{
+    width: 100%;
+    height: 100%;
+}
+
+.icon-container {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Adjust size as needed */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .icon-container img {
+    width: 150%;
+    height: 150%;
+    transition: transform 0.3s ease-in-out; /* Smooth animation */
+  }
+  
+  .icon-container:hover img {
+    transform: scale(1.2); /* Scale up on hover */
+  }
+  
+  h3{
+    font-size: 2.5rem;
+  }

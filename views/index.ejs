@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/icons8-cloud-sun-64.png" type="image/x-icon">
+</head>
+<body>
+    <div class="outer-container">
+        <div class="inner-container">
+            <form action="/" method="POST">
+                
+                <h3>⛅Weatherify</h3>
+                <input type="text" name="city">
+                <input type="submit" value="Get Weather">
+            </form>
+
+            <% if (result) { %>
+            <div class="weather-info">
+                <!-- Define the getTemperatureIcon() function -->
+               <%  
+                    function getTemperatureIcon(temperature) {
+                        if (temperature < 0) {
+                            return "images/icons8-snowflake-48.png";
+                        } else if (temperature >= 0 && temperature < 10) {
+                            return "images/icons8-rain-64.png";
+                        } else if (temperature >= 10 && temperature < 20) {
+                            return "images/icons8-cloud-sun-64.png";
+                        } else if (temperature >= 20 && temperature < 30) {
+                            return "images/icons8-sun-48.png";
+                        } else {
+                            return "images/hot-temperature_4168782.png";
+                        }
+                    }
+               %>
+
+                <!-- Call getTemperatureIcon() function and pass temperature from API as argument -->
+                <div class="icon-container">
+                    <img src=<%=getTemperatureIcon(temperature) %> alt="" id="icon-img">
+                </div>
+                
+                <h1><%= result.main.temp %> °C</h1>
+                <h2><%= result.name %></h2>
+                <div class="details">
+                    <div class="detail">
+                        <img src="images/icons8-humidity-48.png" alt="">
+                        <p><%= result.main.humidity %> %</p>
+                    </div>
+                    <div class="detail">
+                        <img src="images/icons8-wind-speed-83-87-50.png" alt="">
+                        <p><%= result.wind.speed %> m/s</p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
